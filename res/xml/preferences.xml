@@ -234,11 +234,16 @@
     <!-- Extra Settings -->
     <PreferenceCategory android:title="@string/pref_extra_settings">		
         <CheckBoxPreference
+            android:key="direct_call_pref"
+            android:title="@string/direct_call_title"
+            android:summary="@string/direct_call_summary"/>
+
+		<CheckBoxPreference
             android:key="pref_hide_avatar"
             android:title="@string/hide_avatar"
             android:summary="@string/hide_avatar_summary"
             android:defaultValue="false" />
-			
+
         <ListPreference
             android:key="pref_key_mms_input_type"
             android:title="@string/pref_title_input_type"

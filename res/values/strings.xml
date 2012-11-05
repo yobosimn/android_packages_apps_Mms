@@ -965,5 +965,9 @@
     <string name="add_recipients">Add recipients</string>
     <string name="add_recipients_positive_button">Add</string>
 
+	<!-- <Direct Call> -->
+	<string name="direct_call_title">Direct Call</string>
+    <string name="direct_call_summary">Picking up the phone calls the current contact</string>
+
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
