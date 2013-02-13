@@ -173,6 +173,7 @@ public class ConversationList extends ListActivity implements DraftCache.OnDraft
     public void onPause() {
         super.onPause();
 
+        mIsRunning = false;
         // Remember where the list is scrolled to so we can restore the scroll position
         // when we come back to this activity and *after* we complete querying for the
         // conversations.
@@ -311,12 +312,6 @@ public class ConversationList extends ListActivity implements DraftCache.OnDraft
         if (!Conversation.loadingThreads()) {
             Contact.invalidateCache();
         }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mIsRunning = false;
     }
 
     @Override
