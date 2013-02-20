@@ -775,7 +775,7 @@
     <!-- In message list items, this string builds the timestamp line when the message is in a group [CHAR LIMIT=NONE] -->
     <string name="message_timestamp_format"><xliff:g id="string" example="Fred Flinstone">%1$s</xliff:g>\u0020-\u0020<xliff:g id="string" example="9:39AM">%2$s</xliff:g></string>
 
-    <!-- **** CYANOGENMOD ADDITIONS START **** -->
+    <!-- **** CARBON ADDITIONS START **** -->
 
     <!-- Message options - Add SMS to calendar -->
     <string name="menu_add_to_calendar">Add to calendar</string>
@@ -991,5 +991,10 @@
     <string name="pref_summary_mms_user_agent">Spoof phone as a different model for MMS</string>
     <string name="pref_mms_user_agent_custom_set">ser Agent set to:\n</string>
 
-    <!-- **** CYANOGENMOD ADDITIONS END **** -->
+    <!-- Insert contact information -->
+    <string name="menu_insert_contact_info">Insert contact info</string>
+    <string name="cannot_find_contact">Can\'t insert information of the chosen contact</string>
+    <string name="insert_contact_info_positive_button">Insert</string>
+
+    <!-- **** CARBON ADDITIONS END **** -->
 </resources>
