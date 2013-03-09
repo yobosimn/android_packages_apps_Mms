@@ -235,5 +235,13 @@
             android:title="@string/pref_title_input_type"
             android:entries="@array/pref_entries_input_type"
             android:entryValues="@array/pref_values_input_type" />
+
+        <EditTextPreference
+            android:key="pref_msg_signature"
+            android:title="@string/msg_sig_title"
+            android:summary="@string/msg_sig_summary"
+            android:dialogTitle="@string/msg_sig_title"
+            android:hint="@string/msg_sig_enter_text"
+            android:defaultValue="" />
     </PreferenceCategory>
 </PreferenceScreen>
