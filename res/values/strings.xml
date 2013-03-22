@@ -878,6 +878,7 @@
     <!-- EXTRA SETTINGS -->
 
     <string name="pref_extra_settings">Extra settings</string>
+    <string name="pref_char_settings">Char settings</string>
 
     <!-- Strip unicode -->
     <string name="pref_title_strip_unicode">Strip unicode</string>
@@ -911,6 +912,10 @@
     <string name="msg_sig_title">Signature</string>
     <string name="msg_sig_summary">Set a custom Signature for messages</string>
     <string name="msg_sig_enter_text">Enter signature text</string>
+
+    <!-- Avatar -->
+    <string name="hide_avatar">Hide Avatar</string>
+    <string name="hide_avatar_summary">Hide avatar in the conversations list screen</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
