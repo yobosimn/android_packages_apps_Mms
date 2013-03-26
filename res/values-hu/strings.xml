@@ -391,10 +391,6 @@
 
     <string name="pref_quickmessage">Gyors válasz</string>
 
-    <!-- Use dark theme -->
-    <string name="pref_dark_theme_title">Sötét téma használata</string>
-    <string name="pref_dark_theme_summary">Ha nincs kiválasztva, az alapértelmezett \"világos\" téma lesz használva</string>
-
     <!-- Show pop-up -->
     <string name="pref_quickmessage_title">Gyors válasz engedélyezése</string>
     <string name="pref_quickmessage_summary">Gyors válasz felugró ablak megjelenítése</string>

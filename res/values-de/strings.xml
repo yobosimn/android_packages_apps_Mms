@@ -390,10 +390,6 @@
 
     <string name="pref_quickmessage">Schnell antworten</string>
 
-    <!-- Use dark theme -->
-    <string name="pref_dark_theme_title">Dunkles Design verwenden</string>
-    <string name="pref_dark_theme_summary">Das \"helle\" Design wird als Standard verwendet, wenn Option nicht aktiviert wurde</string>
-
     <!-- Show pop-up -->
     <string name="pref_quickmessage_title">Pop-up anzeigen</string>
     <string name="pref_quickmessage_summary">Beim Eingang einer SMS ein Pop-up anzeigen, um schnell antworten zu können</string>

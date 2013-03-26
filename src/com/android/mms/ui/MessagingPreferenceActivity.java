@@ -109,7 +109,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
     public static final String QUICKMESSAGE_ENABLED      = "pref_key_quickmessage";
     public static final String QM_LOCKSCREEN_ENABLED     = "pref_key_qm_lockscreen";
     public static final String QM_CLOSE_ALL_ENABLED      = "pref_key_close_all";
-    public static final String QM_DARK_THEME_ENABLED     = "pref_dark_theme";
 
     // Menu entries
     private static final int MENU_RESTORE_DEFAULTS    = 1;
@@ -146,7 +145,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
     private CheckBoxPreference mEnableQuickMessagePref;
     private CheckBoxPreference mEnableQmLockscreenPref;
     private CheckBoxPreference mEnableQmCloseAllPref;
-    private CheckBoxPreference mEnableQmDarkThemePref;
 
     private EditTextPreference mSignature;
     private String mSignatureText;
@@ -208,7 +206,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
         mEnableQuickMessagePref = (CheckBoxPreference) findPreference(QUICKMESSAGE_ENABLED);
         mEnableQmLockscreenPref = (CheckBoxPreference) findPreference(QM_LOCKSCREEN_ENABLED);
         mEnableQmCloseAllPref = (CheckBoxPreference) findPreference(QM_CLOSE_ALL_ENABLED);
-        mEnableQmDarkThemePref = (CheckBoxPreference) findPreference(QM_DARK_THEME_ENABLED);
 
         // Keyboard input type
         mInputTypePref = (ListPreference) findPreference(INPUT_TYPE);
@@ -291,7 +288,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
         setEnabledQuickMessagePref();
         setEnabledQmLockscreenPref();
         setEnabledQmCloseAllPref();
-        setEnabledQmDarkThemePref();
 
         // If needed, migrate vibration setting from the previous tri-state setting stored in
         // NOTIFICATION_VIBRATE_WHEN to the boolean setting stored in NOTIFICATION_VIBRATE.
@@ -370,10 +366,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
         // Enable/Disable the "enable quickmessage" setting according to
         // the "enable privacy mode" setting state
         mEnableQuickMessagePref.setEnabled(!isPrivacyModeEnabled);
-
-        // Enable/Disable the "enable dark theme" setting according to
-        // the "enable privacy mode" setting state
-        mEnableQmDarkThemePref.setEnabled(!isPrivacyModeEnabled);
     }
 
     private void setEnabledQuickMessagePref() {
@@ -392,12 +384,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
         // The "enable close all" setting is really stored in our own prefs. Read the
         // current value and set the checkbox to match.
         mEnableQmCloseAllPref.setChecked(getQmCloseAllEnabled(this));
-    }
-
-    private void setEnabledQmDarkThemePref() {
-        // The "Use dark theme" setting is really stored in our own prefs. Read the
-        // current value and set the checkbox to match.
-        mEnableQmDarkThemePref.setChecked(getQmDarkThemeEnabled(this));
     }
 
     private void setSmsDisplayLimit() {
@@ -472,9 +458,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
             // Update "enable quickmessage" checkbox state
             mEnableQuickMessagePref.setEnabled(!mEnablePrivacyModePref.isChecked());
 
-            // Update "enable dark theme" checkbox state
-            mEnableQmDarkThemePref.setEnabled(!mEnablePrivacyModePref.isChecked());
-
         } else if (preference == mEnableQuickMessagePref) {
             // Update the actual "enable quickmessage" value that is stored in secure settings.
             enableQuickMessage(mEnableQuickMessagePref.isChecked(), this);
@@ -486,10 +469,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
         } else if (preference == mEnableQmCloseAllPref) {
             // Update the actual "enable close all" value that is stored in secure settings.
             enableQmCloseAll(mEnableQmCloseAllPref.isChecked(), this);
-
-        } else if (preference == mEnableQmDarkThemePref) {
-            // Update the actual "enable dark theme" value that is stored in secure settings.
-            enableQmDarkTheme(mEnableQmDarkThemePref.isChecked(), this);
 
         } else if (preference == mMmsRetrievalDuringRoamingPref) {
             // Update the value in Settings.System
@@ -630,20 +609,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
             PreferenceManager.getDefaultSharedPreferences(context).edit();
         editor.putBoolean(MessagingPreferenceActivity.QM_CLOSE_ALL_ENABLED, enabled);
         editor.apply();
-    }
-
-    public static void enableQmDarkTheme(boolean enabled, Context context) {
-        SharedPreferences.Editor editor =
-            PreferenceManager.getDefaultSharedPreferences(context).edit();
-        editor.putBoolean(MessagingPreferenceActivity.QM_DARK_THEME_ENABLED, enabled);
-        editor.apply();
-    }
-
-    public static boolean getQmDarkThemeEnabled(Context context) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean qmDarkThemeEnabled =
-            prefs.getBoolean(MessagingPreferenceActivity.QM_DARK_THEME_ENABLED, false);
-        return qmDarkThemeEnabled;
     }
 
     private void registerListeners() {
