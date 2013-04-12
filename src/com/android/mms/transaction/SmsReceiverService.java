@@ -52,6 +52,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.android.internal.telephony.TelephonyIntents;
+import com.android.mms.Blacklist;
 import com.android.mms.LogTag;
 import com.android.mms.R;
 import com.android.mms.data.Contact;
@@ -106,6 +107,8 @@ public class SmsReceiverService extends Service {
 
     private int mResultCode;
 
+    private Blacklist mBlacklist;
+
     @Override
     public void onCreate() {
         // Temporarily removed for this duplicate message track down.
@@ -121,6 +124,8 @@ public class SmsReceiverService extends Service {
 
         mServiceLooper = thread.getLooper();
         mServiceHandler = new ServiceHandler(mServiceLooper);
+
+        mBlacklist = new Blacklist(this);
     }
 
     @Override
@@ -469,9 +474,25 @@ public class SmsReceiverService extends Service {
             return null;
         } else if (sms.isReplace()) {
             return replaceMessage(context, msgs, error);
+        } else if (isBlacklisted(sms.getOriginatingAddress())) {
+            return null;
         } else {
             return storeMessage(context, msgs, error);
         }
+    }
+
+    private boolean isBlacklisted(String number) {
+        if (TextUtils.isEmpty(number)) {
+            number = "0000";
+        }
+        int listType = mBlacklist.isListed(number);
+        if (listType != Blacklist.MATCH_NONE) {
+            if (Log.isLoggable(LogTag.TRANSACTION, Log.VERBOSE) || LogTag.DEBUG_SEND) {
+                Log.v(TAG, "Incoming message from " + number + " blocked.");
+            }
+            return true;
+        }
+        return false;
     }
 
     /**
