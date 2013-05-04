@@ -907,6 +907,7 @@ public class MessagingNotification {
             }
         }
         TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(context);
+        taskStackBuilder.setTaskOnHome(false);
 
         // If we have more than one unique thread, change the title (which would
         // normally be the contact who sent the message) to a generic one that
@@ -1308,6 +1309,7 @@ public class MessagingNotification {
         }
 
         TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(context);
+        taskStackBuilder.setTaskOnHome(false);
         if (allFailedInSameThread) {
             failedIntent = new Intent(context, ComposeMessageActivity.class);
             if (isDownload) {
