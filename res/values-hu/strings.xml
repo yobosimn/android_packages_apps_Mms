@@ -382,11 +382,6 @@
     <string name="pref_title_mms_notification_vibrate_custom">Egyedi rezgésminta</string>
     <string name="pref_text_mms_notification_vibrate_custom">Formátum: ki/be milliszekundumban: ki, be, ki, be\u2026</string>
 
-    <!-- Vibrate on call -->
-    <string name="pref_title_mms_notification_vibrate_call">Rezgés hívás közben</string>
-    <string name="pref_summary_mms_notification_vibrate_call">Rezgés engedélyezése hívás közben</string>
-
-
     <!-- QUICKMESSAGE -->
 
     <string name="pref_quickmessage">Gyors válasz</string>

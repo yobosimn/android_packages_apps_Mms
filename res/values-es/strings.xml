@@ -371,8 +371,6 @@
     <string name="gestures_already_present">Aviso: ¡Un gesto similar ya ha sido asociado a otra plantilla!</string>
     <string name="pref_title_mms_notification_vibrate_pattern">Patrón de vibración</string>
     <string name="pref_summary_mms_notification_vibrate_pattern">Cambiar patrón de vibración</string>
-    <string name="pref_title_mms_notification_vibrate_call">Vibración durante llamadas</string>
-    <string name="pref_summary_mms_notification_vibrate_call">Permitir vibración durante una llamada</string>
     <string name="pref_title_mms_notification_vibrate_custom">Patrón personalizado</string>
     <string name="pref_text_mms_notification_vibrate_custom">Secuencia inactivo/activo en milisegundos: inactivo, activo, inactivo, activo,\u2026</string>
     <string name="pref_extra_settings">Ajustes adicionales</string>
