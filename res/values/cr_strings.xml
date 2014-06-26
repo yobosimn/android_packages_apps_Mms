@@ -258,4 +258,8 @@
     <!-- Mark all threads confirmation dialog message -->
     <string name="confirm_mark_unread_all_conversations">All threads will be marked as unread.</string>
 
+    <!-- Used in MobilePaperShowActivity -->
+    <string name="normal_show">View normal mode</string>
+    <string name="cannot_play">Cannot present the slide show.</string>
+
 </resources>
