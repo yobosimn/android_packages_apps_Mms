@@ -46,8 +46,8 @@ public class MmsConfig {
 
     private static final String SMS_PROMO_DISMISSED_KEY = "sms_promo_dismissed_key";
 
-    private static final int MAX_IMAGE_HEIGHT = 480;
-    private static final int MAX_IMAGE_WIDTH = 640;
+    private static final int MAX_IMAGE_HEIGHT = 1944;
+    private static final int MAX_IMAGE_WIDTH = 2592;
     private static final int MAX_TEXT_LENGTH = 2000;
 
     /**
@@ -55,7 +55,7 @@ public class MmsConfig {
      */
     private static boolean mTransIdEnabled = false;
     private static boolean mMmsEnabled = true;                  // default to true
-    private static int mMaxMessageSize = 300 * 1024;            // default to 300k max size
+    private static int mMaxMessageSize = 1024 * 1024;            // default to 1024k max size
     private static String mUserAgent = DEFAULT_USER_AGENT;
     private static String mUaProfTagName = DEFAULT_HTTP_KEY_X_WAP_PROFILE;
     private static String mUaProfUrl = null;

@@ -26,13 +26,13 @@
     <bool name="enabledMMS">true</bool>
 
     <!-- Maximum message size in bytes for a MMS message -->
-    <int name="maxMessageSize">307200</int>
+    <int name="maxMessageSize">1048576</int>
 
     <!-- Maximum height for an attached image -->
-    <int name="maxImageHeight">480</int>
+    <int name="maxImageHeight">1944</int>
 
     <!-- Maximum width for an attached image -->
-    <int name="maxImageWidth">640</int>
+    <int name="maxImageWidth">2592</int>
 
     <!-- Maximum number of SMS message to save per thread before auto-delete kicks in.
          This is the default value. -->
@@ -51,7 +51,7 @@
     <int name="maxMessageCountPerThread">5000</int>
 
     <!-- UAProf URL -->
-    <string name="uaProfUrl">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
+    <string name="uaProfUrl">http://gsm.lge.com/html/gsm/Nexus5-M3.xml</string>
 
     <!-- Maximum number of recipients allowed per message. Use a value of -1
          to indicate no limit. -->
